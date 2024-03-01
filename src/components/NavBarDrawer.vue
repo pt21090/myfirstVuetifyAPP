@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer :modelValue="drawershowBool" location="right" temporary>
+    <v-navigation-drawer :modelValue="drawershowBool" location="right" temporary style="position:fixed">
         <v-list>
             <v-list-item
             v-for="item in items"

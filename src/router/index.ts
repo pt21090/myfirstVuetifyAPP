@@ -5,12 +5,12 @@
  */
 
 // Composables
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory,createWebHashHistory } from 'vue-router'
 import ControlPanel from "@/components/ControlPanel.vue"
 import WifisetupPanel from '@/components/WifisetupPanel.vue'
 
 const router = createRouter({
-  history: createWebHistory(),  //路由器工作模式
+  history: createWebHashHistory(),  //路由器工作模式
   routes:[
     {
       path: "/",

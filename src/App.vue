@@ -4,7 +4,7 @@
       <v-layout>
         <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar> -->
 
-        <v-app-bar color="primary" prominent>
+        <v-app-bar color="primary" style="position:fixed">
           <v-toolbar-title>Controller</v-toolbar-title>
           <v-spacer></v-spacer>
 
@@ -33,6 +33,6 @@
   const childCom = ref(null);
 
   const clicknacIcon = () => {
-    childCom.value.changedrawershow()
+    (childCom.value as any).changedrawershow()
   }
 </script>

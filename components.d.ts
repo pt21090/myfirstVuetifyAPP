@@ -7,11 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    APPNavBar: typeof import('./src/components/APPNavBar.vue')['default']
     ControlPanel: typeof import('./src/components/ControlPanel.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    LoginBlock: typeof import('./src/components/LoginBlock.vue')['default']
-    LoginPanel: typeof import('./src/components/LoginPanel.vue')['default']
     NavBarDrawer: typeof import('./src/components/NavBarDrawer.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
