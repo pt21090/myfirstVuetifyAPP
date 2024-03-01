@@ -8,7 +8,7 @@
           <v-toolbar-title>Controller</v-toolbar-title>
           <v-spacer></v-spacer>
 
-          <v-app-bar-nav-icon variant="text" @click.stop="drawershowBool = !drawershowBool"></v-app-bar-nav-icon>
+          <v-app-bar-nav-icon variant="text" @click.stop="clicknacIcon"></v-app-bar-nav-icon>
           <!-- <v-btn icon="mdi-magnify" variant="text"></v-btn>
                 <v-btn icon="mdi-filter" variant="text"></v-btn>
                 <v-btn icon="mdi-dots-vertical" variant="text"></v-btn> -->
@@ -17,7 +17,7 @@
         
 
         <v-main style="height: 100%;">
-          <NavbarDrawer :show="drawershowBool" />
+          <NavbarDrawer ref="childCom" />
           <RouterView></RouterView>
         </v-main>
       </v-layout>
@@ -27,15 +27,12 @@
 
 <script lang="ts" setup>
   import NavbarDrawer from '@/components/NavBarDrawer.vue'
-  import LoginBlock from "@/components/LoginBlock.vue"
-  import { ref } from 'vue'
-  import { watch } from 'vue';
+  import { ref,onMounted } from 'vue'
 
   const drawershowBool = ref(false)
-  const group = (null)
+  const childCom = ref(null);
 
-  watch(drawershowBool, (count, prevCount) => {
-    console.log(count, prevCount)
-  })
-
+  const clicknacIcon = () => {
+    childCom.value.changedrawershow()
+  }
 </script>

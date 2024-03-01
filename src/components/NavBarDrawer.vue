@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer :modelValue="show" location="right" temporary>
+    <v-navigation-drawer :modelValue="drawershowBool" location="right" temporary>
         <v-list>
             <v-list-item
             v-for="item in items"
@@ -7,13 +7,19 @@
             :title="item.title"
             :to="item.to"
             base-color="green"
+            @click="changedrawershow"
             ></v-list-item>
         </v-list>
     </v-navigation-drawer>
 </template>
 
 <script setup lang="ts">
-    
+    import { ref } from 'vue'
+    let drawershowBool = ref(false)
+    const changedrawershow = () => {
+        drawershowBool.value = !drawershowBool.value
+    }
+
     const items = [
         {
             id:2,
@@ -29,7 +35,7 @@
         },
     ]
     
-    defineProps(['show'])
+    defineExpose({changedrawershow})
 
 </script>
 
